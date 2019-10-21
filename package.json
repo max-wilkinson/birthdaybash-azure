@@ -1,0 +1,30 @@
+{
+  "name": "birthdaybash",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build && func extensions install",
+    "start:host": "func start",
+    "start": "npm run start:host & npm run watch",
+    "build:production": "npm run prestart && npm prune --production",
+    "test": "jest --watchAll"
+  },
+  "dependencies": {
+    "@types/request": "^2.48.2",
+    "moment": "^2.24.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@azure/functions": "^1.0.2-beta2",
+    "@types/jest": "^24.0.18",
+    "@types/request": "^2.48.2",
+    "jest": "^24.9.0",
+    "moment": "^2.24.0",
+    "request": "^2.88.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.3.3"
+  }
+}
